@@ -1,6 +1,8 @@
-from django.http import HttpResponse
-import json
+from rest_framework.decorators import api_view
+from rest_framework.request import Request
+from rest_framework.response import Response
 
+@api_view()
 def usersApi(request):
     users = [
         {
@@ -9,7 +11,7 @@ def usersApi(request):
         },
         {
             "name" : "Pranjal",
-            "role" : "forntend"
+            "role" : "frontend"
         },
         {
             "name" : "Ayush",
@@ -17,4 +19,4 @@ def usersApi(request):
         }
 
     ]
-    return HttpResponse(users)
+    return Response(users)
