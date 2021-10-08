@@ -1,18 +1,20 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+import json
 
 def usersApi(request):
     users = [
         {
-            'name': 'Anurag'
-            'role': 'backend'
+            "name" : "Anurag",
+            "role" : "backend"
         },
         {
-            'name': 'Pranjal'
-            'role': 'forntend'
+            "name" : "Pranjal",
+            "role" : "forntend"
         },
         {
-            'name': 'Ayush'
-            'role': 'flutter'
+            "name" : "Ayush",
+            "role" : "flutter"
         }
 
     ]
+    return HttpResponse(users)
