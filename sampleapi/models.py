@@ -3,10 +3,11 @@ from django.db import models
 
 class Tag(models.Model):
     name = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name
 # Create your models here.
 class Article(models.Model):
-    # def naming(self,title):
-    #     self.title=title
     slug = models.SlugField(null= False, blank= False)
     title = models.CharField(max_length=256)
     description = models.TextField()
@@ -16,3 +17,6 @@ class Article(models.Model):
     updatedAt = models.DateTimeField(auto_now_add=True)
     favourited = models.BooleanField()
     favouriteCount = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.title
