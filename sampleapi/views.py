@@ -16,3 +16,5 @@ class ArticlesListView(ListCreateAPIView):
 class ArticlesDetailView(RetrieveUpdateAPIView):
   queryset = models.Article.objects.all()
   serializer_class=serializers.ArticleSerializer
+
+  
