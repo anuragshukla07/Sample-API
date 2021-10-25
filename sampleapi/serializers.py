@@ -1,11 +1,6 @@
 from rest_framework import serializers
 from sampleapi import models
 
-class StudentSerializer(serializers.Serializer):
-    name = serializers.CharField(max_length=100)
-    roll_no = serializers.IntegerField()
-    marks = serializers.IntegerField()
-
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Tag
